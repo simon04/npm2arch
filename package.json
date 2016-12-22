@@ -27,10 +27,10 @@
   },
   "dependencies": {
     "coffee-script": "~1.6.2",
-    "npm": "~1.2.15",
-    "mustache": "~0.7.2",
-    "rimraf": "~2.1.4",
     "fs.extra": "~1.2.0",
+    "mustache": "~0.7.2",
+    "npm": "^4.0.5",
+    "rimraf": "^2.5.4",
     "uuid-js": "~0.7.4"
   },
   "devDependencies": {
