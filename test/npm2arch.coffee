@@ -17,7 +17,7 @@ describe 'Test npm2arch', ->
         assert.include pkgbuild, "license=(MIT)"
         assert.include pkgbuild, 'url="https://github.com/Filirom1/npm2arch"'
         assert.include pkgbuild, 'pkgdesc="Convert NPM package to a PKGBUILD for ArchLinux"'
-        assert.include pkgbuild, "depends=('nodejs' 'curl' 'git' )"
+        assert.include pkgbuild, "depends=('nodejs' 'npm' 'curl' 'git' )"
         assert.include pkgbuild, "optdepends=('phantomjs: browser-run test suite' )"
         done()
 
@@ -31,7 +31,7 @@ describe 'Test npm2arch', ->
   it 'should return an error when calling npm2PKGBUILD with a non existing package in npm', (done)->
       npm2PKGBUILD 'fqkjsdfkqjs',  (err, pkgbuild) ->
         assert.isNotNull err
-        assert.equal '404 Not Found: fqkjsdfkqjs', err.message
+        assert.equal 'Registry returned 404 for GET on https://registry.npmjs.org/fqkjsdfkqjs', err.message
         done()
 
   it 'should create a package when calling createPkg with a real package name', (done)->
@@ -67,5 +67,5 @@ describe 'Test npm2arch', ->
   it 'should return an error when calling createPkg with a bad package name', (done)->
       createPkg 'qsdfqsdfqsd', ['--source'], verbose: false, (err, file) ->
         assert.isNotNull err
-        assert.equal '404 Not Found: qsdfqsdfqsd', err.message
+        assert.equal 'Registry returned 404 for GET on https://registry.npmjs.org/qsdfqsdfqsd', err.message
         done()

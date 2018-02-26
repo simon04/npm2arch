@@ -38,6 +38,6 @@
     "vows": "~0.7.0"
   },
   "scripts": {
-    "test": " ./node_modules/.bin/mocha  --compilers coffee:coffee-script -R spec"
+    "test": " mocha  --compilers coffee:coffee-script -R spec"
   }
 }
