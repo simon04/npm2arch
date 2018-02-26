@@ -27,7 +27,7 @@ module.exports = (npmName, options, cb) ->
     pkg = cleanup pkg
     pkg.nameLowerCase = pkg.name.toLowerCase()
     pkg.homepage or= pkg.url
-    pkg.homepage or= pkg.repository.url.replace(/^git(@|:\/\/)/, 'http://').replace(/\.git$/, '').replace(/(\.\w*)\:/g, '$1\/') if pkg.repository?.url
+    pkg.homepage or= pkg.repository.url.replace(/^git(@|:\/\/)/, 'https://').replace(/\.git$/, '').replace(/(\.\w*)\:/g, '$1\/') if pkg.repository?.url
     pkg.depends = options.depends
     pkg.optdepends = options.optdepends?.map (o)->
       key = (Object.keys o)[0]
@@ -51,7 +51,7 @@ url=\"{{{homepage}}}\"
 license=({{#licenses}}{{{type}}}{{/licenses}})
 depends=('nodejs' 'npm' {{#depends}}'{{{.}}}' {{/depends}})
 optdepends=({{#optdepends}}'{{{.}}}' {{/optdepends}})
-source=(http://registry.npmjs.org/$_npmname/-/$_npmname-$_npmver.tgz)
+source=(https://registry.npmjs.org/$_npmname/-/$_npmname-$_npmver.tgz)
 noextract=($_npmname-$_npmver.tgz)
 sha1sums=({{#dist}}{{{shasum}}}{{/dist}})
 
