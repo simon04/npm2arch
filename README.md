@@ -1,7 +1,7 @@
 Npm2Arch
 ========
 
-Convert npm packages into a PKGBUILD for Archlinux integration.
+Convert npm packages into a PKGBUILD for Arch Linux integration.
 
 NPM package.json --> PKGBUILD for pacman
 
@@ -24,33 +24,33 @@ Usage
 
 ### npm2PKGBUILD
 
-Transform an npm package into an ArchLinux PKGBUILD
+Transform an npm package into an Arch Linux `PKGBUILD`
 
-    npm2PKGBUILD `npm-name` > PKGBUILD
+    npm2PKGBUILD $NPM_NAME > PKGBUILD
     makepkg
-    pacman -U nodejs-`name`-`version`-any.pkg.tar.xz
+    pacman -U nodejs-$NPM_NAME-$VERSION-any.pkg.tar.xz
 
 
 ### npm2aurball
 
 Transform an npm package into an AUR tarball using `mkaurball`
 
-    npm2aurball `npm-name`
+    npm2aurball $NPM_NAME
 
 
 ### npm2archpkg
 
-Transform an npm package into an ArchLinux package archive
+Transform an npm package into an Arch Linux package archive
 
-    npm2archpkg `npm-name`
-    pacman -U nodejs-`name`-`version`-any.pkg.tar.xz
+    npm2archpkg $NPM_NAME
+    pacman -U nodejs-$NPM_NAME-$VERSION-any.pkg.tar.xz
 
 
 ### npm2archinstall
 
 Install an npm package with pacman
 
-    npm2archinstall `npm-name`
+    npm2archinstall $NPM_NAME
 
 
 License
