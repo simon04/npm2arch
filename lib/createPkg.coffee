@@ -4,7 +4,6 @@ util     = require 'util'
 rimraf   = require 'rimraf'
 {spawn}  = require 'child_process'
 npm2arch = require './npm2PKGBUILD'
-UUID     = require 'uuid-js'
 
 
 module.exports = (npmName, makePkgArgv, options, cb) ->
@@ -20,8 +19,7 @@ module.exports = (npmName, makePkgArgv, options, cb) ->
   makePkgArgv or= []
   options or= verbose: true
   verbose = options.verbose
-  randomId = UUID.create()
-  tmpDir = '/tmp/npm2archinstall-' + randomId
+  tmpDir = '/tmp/npm2archinstall-' + Date.now()
 
   # Create a package for archlinux with makepkg cmd
   npm2arch npmName, options, (err, pkgbuild)->
