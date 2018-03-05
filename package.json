@@ -32,7 +32,8 @@
     "npm": "^4.0.5"
   },
   "devDependencies": {
-    "mocha": "~1.8.2",
+    "hasbin": "^1.2.3",
+    "mocha": "^5.0.1",
     "vows": "~0.7.0"
   },
   "scripts": {

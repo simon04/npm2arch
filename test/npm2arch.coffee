@@ -4,6 +4,7 @@ vows   = require 'vows'
 assert = require 'assert'
 path   = require 'path'
 fs     = require 'fs-extra'
+hasbin = require 'hasbin'
 
 cwd = process.cwd()
 
@@ -34,6 +35,7 @@ describe 'Test npm2arch', ->
         done()
 
   it 'should create a package when calling createPkg with a real package name', (done)->
+      this.skip 'mssing makepkg dependency' unless hasbin.sync 'makepkg'
       randomId =  (((1+Math.random())*0x10000)|0).toString(16).substring(1)
       dir = "/tmp/test-npm2arch-#{randomId}-dir/"
       fs.mkdirSync dir
@@ -49,6 +51,7 @@ describe 'Test npm2arch', ->
         done()
 
   it 'should create an AUR tarball when calling createPkg with a real package name', (done)->
+      this.skip 'missing mkaurball dependency' unless hasbin.sync 'mkaurball'
       randomId =  (((1+Math.random())*0x10000)|0).toString(16).substring(1)
       dir = "/tmp/test-npm2arch-#{randomId}-dir/"
       fs.mkdirSync dir
