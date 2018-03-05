@@ -24,7 +24,7 @@ module.exports = (npmName, makePkgArgv, options, cb) ->
   npm2arch npmName, options, (err, pkgbuild)->
     return cb err if err
     # Create a tmp directory to work on
-    fs.mkdir tmpDir, '0755', (err)->
+    return fs.mkdir tmpDir, '0755', (err)->
       return cb err if err
       cb2 = ->
         arg = arguments
@@ -34,7 +34,7 @@ module.exports = (npmName, makePkgArgv, options, cb) ->
           cb.apply(this, arg)
 
       # Write the PKGBUILD file in the tmpDir
-      fs.writeFile path.join(tmpDir, "PKGBUILD"), pkgbuild, (err)->
+      return fs.writeFile path.join(tmpDir, "PKGBUILD"), pkgbuild, (err)->
         return cb2 err if err
         # Spawn makepkg/mkaurball
         stdio = if verbose then 'inherit' else 'ignore'
@@ -54,4 +54,4 @@ module.exports = (npmName, makePkgArgv, options, cb) ->
             fs.unlinkSync newPkgFile if fs.existsSync newPkgFile
             fs.move path.join(tmpDir, pkgFile), newPkgFile, (err)->
               return cb2 err if err
-              cb2 null, newPkgFile
+              return cb2 null, newPkgFile

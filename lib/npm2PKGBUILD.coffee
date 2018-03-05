@@ -18,7 +18,7 @@ module.exports = (npmName, options, cb) ->
     return cb(er) if er
     npm.commands.view [npmName], true, (er, json) ->
       return cb(er) if er
-      parseNPM json
+      return parseNPM json
 
   # Parse the info json
   parseNPM = (data) ->
@@ -38,7 +38,7 @@ module.exports = (npmName, options, cb) ->
 
   # Populate the template
   populateTemplate = (pkg) ->
-    cb null, mustache.to_html(template, pkg)
+    return cb null, mustache.to_html(template, pkg)
 
 template = '''_npmname={{{name}}}
 _npmver={{{version}}}
