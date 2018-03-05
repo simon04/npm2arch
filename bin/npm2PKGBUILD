@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 var npm2arch = require('../lib/npm2PKGBUILD');
 
-if(process.argv.length != 3){
-  console.error("Usage: npm2PKGBUILD `npm-name` > PKGBUILD");
+if (process.argv.length != 3) {
+  console.error('Usage: npm2PKGBUILD `npm-name` > PKGBUILD');
   process.exit(-1);
 }
 
 var npmName = process.argv[2];
 
 // Show on the console the PKGBUILD
-npm2arch(npmName, function(err, pkgbuild){
-  if(err) {
+npm2arch(npmName, function(err, pkgbuild) {
+  if (err) {
     console.error(err.message);
     process.exit(-1);
   }

@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 var createPkg = require('../lib/createPkg');
 
-if(process.argv.length < 3){
-  console.error("Usage: npm2aurball `npm-name`");
+if (process.argv.length < 3) {
+  console.error('Usage: npm2aurball `npm-name`');
   process.exit(-1);
 }
 
 var npmName = process.argv[2];
 
-function handleError(err){
+function handleError(err) {
   console.error(err);
   process.exit(-1);
 }
 
-createPkg(npmName, 'aurball', function(err, pkgFile){
-  if(err) handleError(err);
-  console.log("AUR tarball created: "+pkgFile);
+createPkg(npmName, 'aurball', function(err, pkgFile) {
+  if (err) handleError(err);
+  console.log('AUR tarball created: ' + pkgFile);
 });

@@ -1,30 +1,30 @@
 #!/usr/bin/env node
 var createPkg = require('../lib/createPkg'),
-           fs = require('fs'),
-        spawn = require('child_process').spawn;
+  fs = require('fs'),
+  spawn = require('child_process').spawn;
 
-if(process.argv.length != 3){
-  console.error("Usage: npm2archinstall `npm-name`");
+if (process.argv.length != 3) {
+  console.error('Usage: npm2archinstall `npm-name`');
   process.exit(-1);
 }
 
 var npmName = process.argv[2];
 
-function handleError(err){
+function handleError(err) {
   console.error(err);
   process.exit(-1);
 }
 
-createPkg(npmName, function(err, pkgFile){
-  if(err) handleError(err);
+createPkg(npmName, function(err, pkgFile) {
+  if (err) handleError(err);
   // Install the pckage via a sudo pacman -U `pkgFile`
   console.log('\nsudo pacman -U ' + pkgFile);
-  var pacman = spawn('sudo', ['pacman', '-U', pkgFile], {stdio: 'inherit'});
-  pacman.on('exit', function (code) {
-    fs.unlink(pkgFile, function(err){
-      if(err) handleError(err);
+  var pacman = spawn('sudo', ['pacman', '-U', pkgFile], { stdio: 'inherit' });
+  pacman.on('exit', function(code) {
+    fs.unlink(pkgFile, function(err) {
+      if (err) handleError(err);
       if (code !== 0) process.exit(code);
       process.exit(0);
-    })
+    });
   });
 });

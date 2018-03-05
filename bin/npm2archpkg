@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 var createPkg = require('../lib/createPkg');
 
-if(process.argv.length < 3){
-  console.error("Usage: npm2archpkg `npm-name` [-f or any makepkg arguments]");
+if (process.argv.length < 3) {
+  console.error('Usage: npm2archpkg `npm-name` [-f or any makepkg arguments]');
   process.exit(-1);
 }
 
 var npmName = process.argv[2];
 var otherArgv = process.argv.slice(3, process.argv.length);
 
-function handleError(err){
+function handleError(err) {
   console.error(err);
   process.exit(-1);
 }
 
-createPkg(npmName, otherArgv, function(err, pkgFile){
-  if(err) handleError(err);
-  console.log("Package created: "+pkgFile);
+createPkg(npmName, otherArgv, function(err, pkgFile) {
+  if (err) handleError(err);
+  console.log('Package created: ' + pkgFile);
 });

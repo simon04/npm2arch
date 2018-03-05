@@ -33,9 +33,13 @@
   "devDependencies": {
     "hasbin": "^1.2.3",
     "mocha": "^5.0.1",
+    "prettier": "^1.11.1",
     "vows": "~0.7.0"
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "prettier --list-different $(git ls-files '*.js' 'bin/npm2*') && mocha -R spec"
   }
 }
