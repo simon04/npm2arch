@@ -21,10 +21,10 @@ describe('Test npm2arch', function() {
         pkgbuild,
         'pkgdesc="Convert NPM package to a PKGBUILD for ArchLinux"'
       );
-      assert.include(pkgbuild, "depends=('nodejs' 'npm' 'curl' 'git' )");
+      assert.include(pkgbuild, "depends=('nodejs' 'npm' 'curl' 'git')");
       assert.include(
         pkgbuild,
-        "optdepends=('phantomjs: browser-run test suite' )"
+        "optdepends=('phantomjs: browser-run test suite')"
       );
     }));
 
