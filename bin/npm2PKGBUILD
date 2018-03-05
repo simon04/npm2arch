@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-require('coffee-script');
 var npm2arch = require('../lib/npm2PKGBUILD');
 
 if(process.argv.length != 3){

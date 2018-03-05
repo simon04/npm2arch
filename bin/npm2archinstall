@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-require('coffee-script');
 var createPkg = require('../lib/createPkg'),
            fs = require('fs'),
         spawn = require('child_process').spawn;

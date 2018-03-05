@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-require('coffee-script');
 var createPkg = require('../lib/createPkg');
 
 if(process.argv.length < 3){

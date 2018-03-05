@@ -26,7 +26,6 @@
     "node": ">0.8.0"
   },
   "dependencies": {
-    "coffee-script": "~1.6.2",
     "fs-extra": "^5.0.0",
     "mustache": "~0.7.2",
     "npm": "^4.0.5"
@@ -37,6 +36,6 @@
     "vows": "~0.7.0"
   },
   "scripts": {
-    "test": " mocha  --compilers coffee:coffee-script -R spec"
+    "test": "mocha -R spec"
   }
 }
