@@ -3,8 +3,7 @@ mocha  = require 'mocha'
 vows   = require 'vows'
 assert = require 'assert'
 path   = require 'path'
-fs     = require 'fs'
-rimraf = require 'rimraf'
+fs     = require 'fs-extra'
 
 cwd = process.cwd()
 
@@ -46,7 +45,7 @@ describe 'Test npm2arch', ->
         assert.include file, 'nodejs-npm2arch-'
         assert.include file, '.src.tar.gz'
         assert.isTrue fs.existsSync file
-        rimraf.sync path.dirname file
+        fs.removeSync path.dirname file
         done()
 
   it 'should create an AUR tarball when calling createPkg with a real package name', (done)->
@@ -61,7 +60,7 @@ describe 'Test npm2arch', ->
         assert.include file, 'nodejs-npm2arch-'
         assert.include file, '.src.tar.gz'
         assert.isTrue fs.existsSync file
-        rimraf.sync path.dirname file
+        fs.removeSync path.dirname file
         done()
 
   it 'should return an error when calling createPkg with a bad package name', (done)->

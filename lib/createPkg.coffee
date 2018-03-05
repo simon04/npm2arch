@@ -1,7 +1,6 @@
-fs       = require 'fs.extra'
+fs       = require 'fs-extra'
 path     = require 'path'
 util     = require 'util'
-rimraf   = require 'rimraf'
 {spawn}  = require 'child_process'
 npm2arch = require './npm2PKGBUILD'
 
@@ -30,7 +29,7 @@ module.exports = (npmName, makePkgArgv, options, cb) ->
       cb2 = ->
         arg = arguments
         # Delete the tmp directory
-        rimraf tmpDir, (err) ->
+        fs.remove tmpDir, (err) ->
           return cb err if err
           cb.apply(this, arg)
 
