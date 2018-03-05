@@ -39,6 +39,6 @@
     "singleQuote": true
   },
   "scripts": {
-    "test": "prettier --list-different $(git ls-files '*.js' 'bin/npm2*') && mocha -R spec"
+    "test": "prettier --list-different $(git ls-files '*.js' 'bin/npm2*') && mocha --reporter spec --timeout 5000"
   }
 }
