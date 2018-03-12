@@ -1,19 +1,17 @@
 {
   "author": "Filirom1 <filirom1@gmail.com>",
-  "name": "npm2arch",
+  "contributors": [
+    "Simon Legner <Simon.Legner@gmail.com>"
+  ],
+  "name": "@simon04/npm2arch",
   "description": "Convert NPM package to a PKGBUILD for ArchLinux",
-  "version": "0.1.19",
-  "homepage": "https://github.com/Filirom1/npm2arch",
+  "version": "1.0.0",
+  "homepage": "https://github.com/simon04/npm2arch",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Filirom1/npm2arch.git"
+    "url": "git://github.com/simon04/npm2arch.git"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ],
+  "license": "MIT",
   "main": "index.js",
   "bin": {
     "npm2PKGBUILD": "bin/npm2PKGBUILD",
@@ -22,9 +20,6 @@
     "npm2archinstall": "bin/npm2archinstall"
   },
   "preferGlobal": true,
-  "engines": {
-    "node": ">0.8.0"
-  },
   "dependencies": {
     "fs-extra": "^5.0.0",
     "npm": "^4.0.5"
