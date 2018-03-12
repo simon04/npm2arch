@@ -1,14 +1,14 @@
-Npm2Arch
+npm2arch
 ========
 
-Convert npm packages into a PKGBUILD for Arch Linux integration.
+Convert [npm](https://www.npmjs.com/) packages/[package.json](https://docs.npmjs.com/files/package.json) into a [PKGBUILD](https://www.archlinux.org/pacman/PKGBUILD.5.html) for [Arch Linux](https://www.archlinux.org/) integration.
 
-NPM package.json --> PKGBUILD for pacman
+This is a fork of the unmaintained [Filirom1/npm2arch](https://github.com/Filirom1/npm2arch).
 
 
 Install
 -------
-### From AUR :
+### From AUR
 yaourt -S [nodejs-npm2arch](https://aur.archlinux.org/packages/nodejs-npm2arch/)
 
 
