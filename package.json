@@ -5,7 +5,7 @@
   ],
   "name": "@simon04/npm2arch",
   "description": "Convert NPM package to a PKGBUILD for ArchLinux",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/simon04/npm2arch",
   "repository": {
     "type": "git",
