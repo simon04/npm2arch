@@ -21,8 +21,7 @@
   },
   "preferGlobal": true,
   "dependencies": {
-    "fs-extra": "^5.0.0",
-    "npm": "^4.0.5"
+    "fs-extra": "^5.0.0"
   },
   "devDependencies": {
     "hasbin": "^1.2.3",

@@ -38,7 +38,7 @@ describe('Test npm2arch', function() {
     npm2PKGBUILD('fqkjsdfkqjs').catch(err => {
       assert.isNotNull(err);
       assert.equal(
-        'Registry returned 404 for GET on https://registry.npmjs.org/fqkjsdfkqjs',
+        'Registry returned 404 for GET on https://registry.npmjs.org/fqkjsdfkqjs/latest',
         err.message
       );
     }));
@@ -92,7 +92,7 @@ describe('Test npm2arch', function() {
     createPkg('qsdfqsdfqsd', ['--source'], { verbose: false }).catch(err => {
       assert.isNotNull(err);
       assert.equal(
-        'Registry returned 404 for GET on https://registry.npmjs.org/qsdfqsdfqsd',
+        'Registry returned 404 for GET on https://registry.npmjs.org/qsdfqsdfqsd/latest',
         err.message
       );
     }));
